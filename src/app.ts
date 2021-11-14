@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import errorHandler from 'errorhandler';
 import { json } from 'body-parser';
-import router from './routes/mongoRoutes';
+import router from './webServer/routes/mongoRoutes';
 
 const app = express();
 

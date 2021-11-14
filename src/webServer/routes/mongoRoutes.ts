@@ -9,4 +9,6 @@ router.get(`${path}/erro`, mongoController.getAloErro);
 router.get(`${path}/:nome`, mongoController.getAloComParametro);
 router.post(path, mongoController.postAlo);
 
+router.get('/', mongoController.getImoveis);
+
 export default router;
