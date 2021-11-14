@@ -1,34 +1,13 @@
 import { Request, Response } from 'express';
 import * as ImovelRepositorio from '../../database/persistencia/imovelRepositorio';
 import { connect, disconnect } from 'mongoose';
+import { Imovel } from '../../database/entities/imovel';
 
-const uri = process.env.URI || "mongodb+srv://nick:nick@clone-airbnb.54mse.mongodb.net/clone-airbnb?retryWrites=true&w=majority";
-
-export function getAlo(req: Request, res: Response) {
-    res.send('Alô mundo');
-}
-
-export function getAloComParametro(req: Request, res: Response) {
-    const nome = req.params.nome;
-    res.send(`Alô, ${nome}`);
-}
-
-export function postAlo(req: Request, res: Response) {
-    const {nome} = req.body;
-    if(nome) {
-        res.send(`Alô, ${nome}`);
-    } else {
-        res.status(400).send('Nome é obrigaório');
-    }
-}
-
-export function getAloErro(req: Request, res: Response) {
-    throw new Error('Algo deu errado!');
-}
+const uri = process.env.URI;
 
 export async function getImoveis(req: Request, res: Response) {
     try {
-        const cliente = await connect(uri);
+        const cliente = await connect(uri!);
         console.log('Conectado ao DB Atlas');
 
         const imoveis = await ImovelRepositorio.buscar();
@@ -41,4 +20,27 @@ export async function getImoveis(req: Request, res: Response) {
         console.log('Desconectado do MongoDb Atlas');
     }
 
+}
+
+export async function postImoveis(req: Request, res: Response) {
+    try {
+        const cliente = await connect(uri!);
+        console.log('Conectado ao DB Atlas');
+
+        const imovel: Imovel = req.body;
+
+        if (imovel) {
+
+            await ImovelRepositorio.criar(imovel);
+            res.send(`Imóvel adicionado com sucesso!`);
+        } else {
+            res.status(400).send('Houve um problema na inserção dos dados!');
+        }
+    
+    } catch (error) {
+        res.send(`Deu um errinho: ${error}`);
+    } finally {
+        await disconnect();
+        console.log('Desconectado do MongoDb Atlas');
+    }
 }
