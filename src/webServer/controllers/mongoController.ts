@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import * as ImovelRepositorio from '../../database/persistencia/imovelRepositorio';
 import { connect, disconnect } from 'mongoose';
 
-const uri = process.env.URI || "mongodb+srv://nick:Nkcl!@-1404@clone-airbnb.54mse.mongodb.net/clone-airbnb?retryWrites=true&w=majority";
+const uri = process.env.URI || "mongodb+srv://nick:nick@clone-airbnb.54mse.mongodb.net/clone-airbnb?retryWrites=true&w=majority";
 
 export function getAlo(req: Request, res: Response) {
     res.send('Alô mundo');
@@ -35,7 +35,6 @@ export async function getImoveis(req: Request, res: Response) {
         res.send(imoveis);
         
     } catch (error) {
-        
         res.send(error);
     } finally {
         await disconnect();
