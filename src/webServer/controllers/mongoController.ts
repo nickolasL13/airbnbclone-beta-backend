@@ -22,6 +22,25 @@ export async function getImoveis(req: Request, res: Response) {
 
 }
 
+export async function getImovel(req: Request, res: Response) {
+    try {
+        const cliente = await connect(uri!);
+        console.log('Conectado ao DB Atlas');
+
+        const id = req.params.id;
+
+        const imoveis = await ImovelRepositorio.buscarPorId(id);
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } finally {
+        await disconnect();
+        console.log('Desconectado do MongoDb Atlas');
+    }
+
+}
+
 export async function postImoveis(req: Request, res: Response) {
     try {
         const cliente = await connect(uri!);
