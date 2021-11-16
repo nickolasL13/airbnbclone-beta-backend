@@ -9,7 +9,7 @@ const app = express();
 
 app.set('port', process.env.PORT || 3000);
 app.use(json());
-app.use(cors({origin: `https://server-airbnbclone-1226.herokuapp.com/`}));
+app.use(cors({origin: '*'}));
 
 if (process.env.NODE_ENV !== 'production') {
     app.use(morgan('dev'));
