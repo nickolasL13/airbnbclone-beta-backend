@@ -21,7 +21,7 @@ O projeto foi feito com as seguintes tecnologias:
 - [dotenv](https://github.com/motdotla/dotenv)
 - [errorhandler](https://github.com/expressjs/errorhandler)
 - [morgan](https://github.com/expressjs/morgan)
-- [node=fetch](https://github.com/node-fetch/node-fetch)
+- [node-fetch](https://github.com/node-fetch/node-fetch)
 
 ## :zap: Executando o Projeto
 
