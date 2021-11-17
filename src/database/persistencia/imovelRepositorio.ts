@@ -14,3 +14,4 @@ export async function buscarPorId(id: string): Promise<Imovel[]> {
     let consulta = ImovelModel.where('iId').equals(id);
     return consulta.exec(); //retorna uma Promise
 }
+
