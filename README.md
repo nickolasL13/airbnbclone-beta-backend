@@ -1,7 +1,7 @@
 # airbnbcloneback
 Repositório Backend do desafio Airbnb Clone StartDB.
 
-url: ws-airbnbclone-1226.herokuapp.com
+url: https://ws-airbnbclone-1226.herokuapp.com
 
 # Tecnologias utilizadas:
 
