@@ -40,13 +40,12 @@ $ npm install
 ## Tarefas da dupla
 
 ### Nickolas
- - Implementação do Express
- - Criação de Models e Schemas com Mongoose
+ - Implementação de Middlewares
  - Conexão com o MongoDB
  - Deploy no heroku
  - Funções de requisição
 
 ### Yasmin
- - Design de CSS
- - Design de tela
  - Funções de busca
+ - Implementação de rotas do Express
+ - Criação de Models e Schemas com Mongoose
