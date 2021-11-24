@@ -1,3 +1,9 @@
+# Coisas a Fazer:
+- Adicionar imóvel 
+- Reserva de Imóvel
+- Ajuste de Pesquisa
+- Ajuste de Conexão com Mongo
+
 # airbnbcloneback
 Repositório Backend do desafio Airbnb Clone StartDB.
 
