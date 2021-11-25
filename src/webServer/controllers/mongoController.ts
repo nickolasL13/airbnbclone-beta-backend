@@ -1,55 +1,11 @@
 import { Request, Response } from 'express';
 import * as ImovelRepositorio from '../../database/persistencia/imovelRepositorio';
-import { connect, disconnect } from 'mongoose';
 import { Imovel } from '../../database/entities/imovel';
 
-const uri = process.env.URI;
-
-export async function getImoveis(req: Request, res: Response) {
+export async function postImoveis(req: Request, res: Response) { //
     try {
-        const cliente = await connect(uri!);
-        console.log('Conectado ao DB Atlas');
-
-        const imoveis = await ImovelRepositorio.buscar();
-        res.send(imoveis);
-        
-    } catch (error) {
-        res.send(error);
-    } finally {
-        await disconnect();
-        console.log('Desconectado do MongoDb Atlas');
-    }
-
-}
-
-export async function getImovel(req: Request, res: Response) {
-    try {
-        const cliente = await connect(uri!);
-        console.log('Conectado ao DB Atlas');
-
-        const id = req.params.id;
-
-        const imoveis = await ImovelRepositorio.buscarPorId(id);
-        res.send(imoveis);
-        
-    } catch (error) {
-        res.send(error);
-    } finally {
-        await disconnect();
-        console.log('Desconectado do MongoDb Atlas');
-    }
-
-}
-
-export async function postImoveis(req: Request, res: Response) {
-    try {
-        const cliente = await connect(uri!);
-        console.log('Conectado ao DB Atlas');
-
         const imovel: Imovel = req.body;
-
         if (imovel) {
-
             await ImovelRepositorio.criar(imovel);
             res.send(`Imóvel adicionado com sucesso!`);
         } else {
@@ -58,8 +14,126 @@ export async function postImoveis(req: Request, res: Response) {
     
     } catch (error) {
         res.send(`Deu um errinho: ${error}`);
-    } finally {
-        await disconnect();
-        console.log('Desconectado do MongoDb Atlas');
+    } 
+}
+
+export async function getImoveis(req: Request, res: Response) { //
+    try {
+        const imoveis = await ImovelRepositorio.buscar();
+        res.send(imoveis);       
+    } catch (error) {
+        res.send(error);
     }
 }
+
+export async function getImovelArCond(req: Request, res: Response) { //
+    try {
+        const imoveis = await ImovelRepositorio.buscarPorArCond();
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+export async function getImovelWifi(req: Request, res: Response) { //
+    try {
+        const imoveis = await ImovelRepositorio.buscarPorWifi();
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+
+export async function getImovelCozinha(req: Request, res: Response) { //
+    try {
+        const imoveis = await ImovelRepositorio.buscarPorCozinha();
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+
+export async function getImovelFreeParking(req: Request, res: Response) { //
+    try {
+        const imoveis = await ImovelRepositorio.buscarPorFreeParking();
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+
+export async function getImovelPiscina(req: Request, res: Response) { //
+    try {
+        const imoveis = await ImovelRepositorio.buscarPorPiscina();
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+export async function getImovel(req: Request, res: Response) { //
+    try {
+        const id = req.params.id;
+        const imoveis = await ImovelRepositorio.buscarPorId(id);
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+export async function getImovelPreco(req: Request, res: Response) { //
+    try {
+        const minPrice = Number(req.params.minPrice);
+        const maxPrice = Number(req.params.maxPrice);
+        const imoveis = await ImovelRepositorio.buscarPorPreco(minPrice, maxPrice);
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+export async function getImovelEspaco(req: Request, res: Response) { //
+    try {
+        const espaco = req.params.espaco;
+        const imoveis = await ImovelRepositorio.buscarPorEspaco(espaco);
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+export async function getImovelCidade(req: Request, res: Response) { //
+    try {
+        const cidade = req.params.cidade;
+        const imoveis = await ImovelRepositorio.buscarPorCidade(cidade);
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+export async function getImovelEstado(req: Request, res: Response) { //
+    try {
+        const estado = req.params.estado;
+        const imoveis = await ImovelRepositorio.buscarPorEstado(estado);
+        res.send(imoveis);
+        
+    } catch (error) {
+        res.send(error);
+    } 
+}
+
+
+

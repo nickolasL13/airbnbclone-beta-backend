@@ -4,8 +4,13 @@ import errorHandler from 'errorhandler';
 import { json } from 'body-parser';
 import router from './webServer/routes/mongoRoutes';
 import cors from 'cors';
+import mongoose from 'mongoose';
 
 const app = express();
+
+const uri = process.env.URI;
+
+mongoose.connect(uri!).then(() => {console.log("Conectado")}).catch(() => {console.log("Errinho")});
 
 app.set('port', process.env.PORT || 3000);
 app.use(json());
