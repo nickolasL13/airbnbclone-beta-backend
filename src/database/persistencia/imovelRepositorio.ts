@@ -46,7 +46,7 @@ export async function buscarPorPreco(minPrice: number, maxPrice: number): Promis
 }
 
 export async function buscarPorEspaco(espaco: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.where('espaco').regex(espaco);
+    let consulta = ImovelModel.find({espaco: { $regex: espaco, $options: 'i'}});
     return consulta.exec(); //retorna uma Promise
 }
 
@@ -56,7 +56,7 @@ export async function buscarPorCidade(cidade: string): Promise<Imovel[]> { //
 }
 
 export async function buscarPorEstado(estado: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.where('lugar.estado').regex(estado);
+    let consulta = ImovelModel.where('lugar.estado').regex({$regex: estado, $options: 'i'});
     return consulta.exec(); //retorna uma Promise
 }
 
