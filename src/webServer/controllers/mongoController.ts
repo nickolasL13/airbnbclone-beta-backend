@@ -59,7 +59,7 @@ export async function postImoveis(req: Request, res: Response) {
     } catch (error) {
         res.send(`Deu um errinho: ${error}`);
     } finally {
-        await disconnect();
-        console.log('Desconectado do MongoDb Atlas');
+       // await disconnect();
+        //console.log('Desconectado do MongoDb Atlas');
     }
 }

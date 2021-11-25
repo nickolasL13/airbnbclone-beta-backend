@@ -29,6 +29,7 @@ export interface Imovel {
     piscina: boolean, 
     pricePerNight: number,
     descricao: string,
+    photo: string,
     lugar: Lugar,
     taxaDeServico: TaxaDeServico,
     taxaDeLimpeza: TaxaDeLimpeza,
