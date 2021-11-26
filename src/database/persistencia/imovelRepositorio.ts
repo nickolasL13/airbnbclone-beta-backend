@@ -10,6 +10,7 @@ export async function buscar(): Promise<Imovel[]> { //
     return consulta.exec(); 
 }
 
+
 export async function buscarPorId(id: string): Promise<Imovel[]> { //
     let consulta = ImovelModel.find({iId: id});
     return consulta.exec(); //retorna uma Promise
@@ -56,7 +57,7 @@ export async function buscarPorCidade(cidade: string): Promise<Imovel[]> { //
 }
 
 export async function buscarPorEstado(estado: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.where('lugar.estado').regex({$regex: estado, $options: 'i'});
+    let consulta = ImovelModel.find({'lugar.estado': {$regex: estado, $options: 'i'}});
     return consulta.exec(); //retorna uma Promise
 }
 
