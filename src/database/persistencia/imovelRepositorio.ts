@@ -10,7 +10,6 @@ export async function buscar(): Promise<Imovel[]> { //
     return consulta.exec(); 
 }
 
-
 export async function buscarPorId(id: string): Promise<Imovel[]> { //
     let consulta = ImovelModel.find({iId: id});
     return consulta.exec(); //retorna uma Promise
