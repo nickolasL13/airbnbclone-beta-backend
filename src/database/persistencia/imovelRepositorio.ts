@@ -10,8 +10,16 @@ export async function buscar(): Promise<Imovel[]> {
     return consulta.exec(); 
 }
 
-export async function buscarPorId(id: string): Promise<Imovel[]> {
-    let consulta = ImovelModel.where('iId').equals(id);
+export async function buscarPorId(iId: string): Promise<Imovel[]> {
+    let consulta = ImovelModel.where('iId').equals(iId);
     return consulta.exec(); //retorna uma Promise
 }
 
+export async function updateImovel(id: string): Promise<any> {
+    return await ImovelModel.findByIdAndUpdate(id);
+}
+
+export async function deletarImovel(iId: string): Promise<any> {
+    let consulta = ImovelModel.findByIdAndRemove({iId});
+    return consulta.exec();
+}

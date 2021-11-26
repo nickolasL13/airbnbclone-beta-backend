@@ -27,9 +27,9 @@ export async function getImovel(req: Request, res: Response) {
         const cliente = await connect(uri!);
         console.log('Conectado ao DB Atlas');
 
-        const id = req.params.id;
+        const iId = req.params.iId;
 
-        const imoveis = await ImovelRepositorio.buscarPorId(id);
+        const imoveis = await ImovelRepositorio.buscarPorId(iId);
         res.send(imoveis);
         
     } catch (error) {
@@ -63,3 +63,17 @@ export async function postImoveis(req: Request, res: Response) {
         //console.log('Desconectado do MongoDb Atlas');
     }
 }
+
+export async function deleteImovel(req: Request, res: Response) {
+    try{
+        const iId = req.body.iId;
+        const del = await ImovelRepositorio.deletarImovel(iId); 
+        res.status(200).send({
+            message: 'imóvel deletado com sucesso!'
+        })
+    } catch(error) {
+        console.log(error);
+        res.status(500).send({message: 'Falha ao deletar locacao'});
+    }
+}
+
