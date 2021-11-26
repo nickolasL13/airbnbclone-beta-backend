@@ -52,7 +52,7 @@ export async function buscarPorEspaco(espaco: string): Promise<Imovel[]> { //
 }
 
 export async function buscarPorCidade(cidade: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.where('lugar.cidade').regex(cidade);
+    let consulta = ImovelModel.find({'lugar.cidade': {$regex: cidade, $options: 'i'}});
     return consulta.exec(); //retorna uma Promise
 }
 
