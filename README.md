@@ -1,7 +1,6 @@
 # Coisas a Fazer:
-- Retirar botões editar e excluir (27/11)
+- Retirar botão editar e implementar excluir (27/11)
 - Inserir link da imagem no banco (27/11)
-- Arrumar que fica invisível a letra do dropdown cidade/estado quando mexe (27/11)
 - Resolver problema post locação não funcionando (27/11)
 - Calculo das datas (27/11)
 - Valor da locação (27/11)
