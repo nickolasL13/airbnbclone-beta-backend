@@ -5,6 +5,7 @@ const router = Router();
 
 router.get('/', mongoController.getImoveis);
 router.post('/', mongoController.postImoveis);
+router.delete('/:id', mongoController.deleteImovel);
 router.get('/imovel/:id', mongoController.getImovel);
 router.get('/arCond', mongoController.getImovelArCond);
 router.get('/wifi', mongoController.getImovelWifi);

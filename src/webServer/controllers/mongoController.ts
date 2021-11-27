@@ -135,5 +135,17 @@ export async function getImovelEstado(req: Request, res: Response) { //
     } 
 }
 
+export async function deleteImovel(req: Request, res: Response) {
+    try{
+        const iId = req.body.iId;
+        const del = await ImovelRepositorio.deletarImovel(iId); 
+        res.status(200).send({
+            message: 'imóvel deletado com sucesso!'
+        })
+    } catch(error) {
+        console.log(error);
+        res.status(500).send({message: 'Falha ao deletar locacao'});
+    }
+}
 
 
