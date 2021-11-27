@@ -16,6 +16,7 @@ const ImovelSchema = new Schema<Imovel>({
     piscina: {type: Boolean, required: true},
     pricePerNight: { type: Number, required: true },
     descricao: {type: String, required: true},
+    photo: {type: String, required: true},
     lugar: {type: { cidade: String, estado: String, endereco: String}, required: true},
     taxaDeLimpeza: { type: { cobra: Boolean, valor: Number }, required: true },
     taxaDeServico: { type: { cobra: Boolean, valorPerDay: Number }, required: true},    

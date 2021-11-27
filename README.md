@@ -1,4 +1,10 @@
 # Coisas a Fazer:
+- Retirar botão editar e implementar excluir (27/11)
+- Inserir link da imagem no banco (27/11)
+- Resolver problema post locação não funcionando (27/11)
+- Calculo das datas (27/11)
+- Valor da locação (27/11)
+- Testes simples de entrada de dados (28/11)
 - Ajuste de Pesquisa (24/11)
 - Ajuste de Conexão com Mongo (24/11)
 - Adicionar imóvel (25/11 - 26/11)
