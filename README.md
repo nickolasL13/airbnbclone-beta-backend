@@ -1,4 +1,11 @@
 # Coisas a Fazer:
+- Retirar botões editar e excluir (27/11)
+- Inserir link da imagem no banco (27/11)
+- Arrumar que fica invisível a letra do dropdown cidade/estado quando mexe (27/11)
+- Resolver problema post locação não funcionando (27/11)
+- Calculo das datas (27/11)
+- Valor da locação (27/11)
+- Testes simples de entrada de dados (28/11)
 - Ajuste de Pesquisa (24/11)
 - Ajuste de Conexão com Mongo (24/11)
 - Adicionar imóvel (25/11 - 26/11)
