@@ -1,17 +1,17 @@
-import { ImovelModel  } from "./imovelModel";
+import { ImovelModel } from "./imovelModel";
 import { Imovel } from "../entities/imovel";
 
-export async function criar( imovel: Imovel ): Promise<Imovel> { //
+export async function criar(imovel: Imovel): Promise<Imovel> { //
     return ImovelModel.create(imovel);
 }
 
 export async function buscar(): Promise<Imovel[]> { //
     let consulta = ImovelModel.find();
-    return consulta.exec(); 
+    return consulta.exec();
 }
 
 export async function buscarPorId(id: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.find({iId: id});
+    let consulta = ImovelModel.find({ iId: id });
     return consulta.exec(); //retorna uma Promise
 }
 
@@ -46,17 +46,17 @@ export async function buscarPorPreco(minPrice: number, maxPrice: number): Promis
 }
 
 export async function buscarPorEspaco(espaco: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.find({espaco: { $regex: espaco, $options: 'i'}});
+    let consulta = ImovelModel.find({ espaco: { $regex: espaco, $options: 'i' } });
     return consulta.exec(); //retorna uma Promise
 }
 
 export async function buscarPorCidade(cidade: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.find({'lugar.cidade': {$regex: cidade, $options: 'i'}});
+    let consulta = ImovelModel.find({ 'lugar.cidade': { $regex: cidade, $options: 'i' } });
     return consulta.exec(); //retorna uma Promise
 }
 
 export async function buscarPorEstado(estado: string): Promise<Imovel[]> { //
-    let consulta = ImovelModel.find({'lugar.estado': {$regex: estado, $options: 'i'}});
+    let consulta = ImovelModel.find({ 'lugar.estado': { $regex: estado, $options: 'i' } });
     return consulta.exec(); //retorna uma Promise
 }
 
