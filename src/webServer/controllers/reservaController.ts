@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import * as LocacaoRepositorio from '../../database/persistencia/locacaoRepositorio';
-import { connect, disconnect } from 'mongoose';
 import { locacao } from '../../database/entities/locacao';
 
 export async function getLocacao(req: Request, res: Response) {
@@ -11,8 +10,7 @@ export async function getLocacao(req: Request, res: Response) {
     } catch (error) {
         res.send(error);
     }
-
-}
+}    
 
 export async function getLocacaoID(req: Request, res: Response) {
     try {
@@ -23,11 +21,7 @@ export async function getLocacaoID(req: Request, res: Response) {
         
     } catch (error) {
         res.send(error);
-    } finally {
-        // await disconnect();
-        //console.log('Desconectado do MongoDb Atlas');
-    }
-
+    } 
 }
 
 export async function postLocacao(req: Request, res: Response) {
@@ -35,7 +29,6 @@ export async function postLocacao(req: Request, res: Response) {
         const locacao: locacao = req.body;
 
         if (locacao) {
-
             await LocacaoRepositorio.criar(locacao);
             res.send(`Locação adicionada com sucesso!`);
         } else {
@@ -44,10 +37,7 @@ export async function postLocacao(req: Request, res: Response) {
     
     } catch (error) {
         res.send(`Deu um errinho: ${error}`);
-    } finally {
-       // await disconnect();
-        //console.log('Desconectado do MongoDb Atlas');
-    }
+    } 
 }
 
 export async function deleteLocacao(req: Request, res: Response) {

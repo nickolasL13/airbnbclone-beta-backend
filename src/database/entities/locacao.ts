@@ -3,11 +3,12 @@ import { model, Schema, SchemaTypes } from 'mongoose';
 import {Imovel} from './imovel';
 
 export interface locacao extends Imovel {
-    idImovel: Imovel[],
+    iId: string,
+    idImovel: string,
     checkin: Date,
     checkout: Date,
     nome: string,
-    telefone: number,
+    telefone: string,
     email: string,
-    total: number
+    total: string
 }

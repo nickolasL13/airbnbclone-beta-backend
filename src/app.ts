@@ -22,7 +22,6 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
     app.use(morgan('tiny'));
 }
-app.use(router); 
-
+app.use('/', router); 
 
 export default app;
