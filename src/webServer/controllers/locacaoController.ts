@@ -3,30 +3,19 @@ import * as LocacaoRepositorio from '../../database/persistencia/locacaoReposito
 import { connect, disconnect } from 'mongoose';
 import { locacao } from '../../database/entities/locacao';
 
-const uri = process.env.URI;
-
 export async function getLocacao(req: Request, res: Response) {
     try {
-        const cliente = await connect(uri!);
-        console.log('Conectado ao DB Atlas');
-
         const locacao = await LocacaoRepositorio.buscar();
         res.send(locacao);
         
     } catch (error) {
         res.send(error);
-    } finally {
-      //  await disconnect();
-       // console.log('Desconectado do MongoDb Atlas');
     }
 
 }
 
 export async function getLocacaoID(req: Request, res: Response) {
     try {
-        const cliente = await connect(uri!);
-        console.log('Conectado ao DB Atlas');
-
         const iId = req.params.idImovel;
 
         const locacao = await LocacaoRepositorio.buscarPorId(iId);
@@ -43,9 +32,6 @@ export async function getLocacaoID(req: Request, res: Response) {
 
 export async function postLocacao(req: Request, res: Response) {
     try {
-        const cliente = await connect(uri!);
-        console.log('Conectado ao DB Atlas');
-
         const locacao: locacao = req.body;
 
         if (locacao) {
