@@ -19,7 +19,7 @@ export async function updateLocacao(idImovel: string): Promise<any> {
     return await LocacaoModel.findByIdAndUpdate(idImovel);
 }
 
-export async function deletarLocacao(idImovel: string): Promise<any> {
-    let consulta = LocacaoModel.findByIdAndRemove({idImovel});
+export async function deletarLocacao(id: string): Promise<any> {
+    let consulta = LocacaoModel.deleteOne({iId: id});
     return consulta.exec();
 }

@@ -20,6 +20,6 @@ router.get('/estado/:estado', mongoController.getImovelEstado);
 router.get('/reserva', reservaController.getLocacao);
 router.post('/reserva', reservaController.postLocacao);
 router.get('/reserva/:id', reservaController.getLocacaoID);
-router.post('/reserva/delete', reservaController.deleteLocacao);
+router.delete('/reserva/:id', reservaController.deleteLocacao);
 
 export default router;

@@ -42,8 +42,8 @@ export async function postLocacao(req: Request, res: Response) {
 
 export async function deleteLocacao(req: Request, res: Response) {
     try{
-        const idImovel = req.body.idImovel;
-        const del = await LocacaoRepositorio.deletarLocacao(idImovel); 
+        const id = req.body.id;
+        const del = await LocacaoRepositorio.deletarLocacao(id); 
         res.status(200).send({
             message: 'locacao deletada com sucesso!'
         })
