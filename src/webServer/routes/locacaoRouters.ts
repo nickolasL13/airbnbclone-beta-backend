@@ -3,9 +3,9 @@ import * as locacaoController from '../controllers/locacaoController';
 
 const router = Router();
 
-router.get('/locacao/', locacaoController.getLocacao);
-router.post('/locacao/', locacaoController.postLocacao);
-router.get('/locacao/:id', locacaoController.getLocacaoID);
-router.post('/locacao/delete', locacaoController.deleteLocacao);
+router.get('/', locacaoController.getLocacao);
+router.post('/', locacaoController.postLocacao);
+router.get('/:id', locacaoController.getLocacaoID);
+router.delete('/:id', locacaoController.deleteLocacao);
 
 export default router;

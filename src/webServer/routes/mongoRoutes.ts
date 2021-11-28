@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import * as mongoController from '../controllers/mongoController';
-
+import { ImovelModel } from '../../database/persistencia/imovelModel';
 const router = Router();
 
 router.get('/', mongoController.getImoveis);

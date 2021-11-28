@@ -60,8 +60,8 @@ export async function buscarPorEstado(estado: string): Promise<Imovel[]> { //
     return consulta.exec(); //retorna uma Promise
 }
 
-export async function deletarImovel(iId: string): Promise<any> {
-    let consulta = ImovelModel.findByIdAndRemove({iId});
+export async function deletarImovel(id: string): Promise<any> {
+    let consulta = ImovelModel.deleteOne({ _Id: id });
     return consulta.exec();
 }
 

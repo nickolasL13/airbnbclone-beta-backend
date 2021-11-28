@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import errorHandler from 'errorhandler';
 import { json } from 'body-parser';
 import router from './webServer/routes/mongoRoutes';
+import locacao from './webServer/routes/locacaoRouters';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
     app.use(morgan('tiny'));
 }
-app.use(router); 
-
+app.use('/',router); 
+app.use('/locacao', locacao); 
 
 export default app;
