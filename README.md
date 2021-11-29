@@ -1,16 +1,15 @@
-# Coisas a Fazer:
-- Retirar botão editar e implementar excluir (27/11)
-- Inserir link da imagem no banco (27/11)
-- Resolver problema post locação não funcionando (27/11)
-- Calculo das datas (27/11)
-- Valor da locação (27/11)
-- Testes simples de entrada de dados (28/11)
-- Ajuste de Pesquisa (24/11)
-- Ajuste de Conexão com Mongo (24/11)
-- Adicionar imóvel (25/11 - 26/11)
-- Reserva de Imóvel (25/11 - 26/11)
+# airbnbcloneback - bersão beta
+## Coisas alteradas:
+- Ajuste e criação de funções de *queries* do Mongo
+- Adição de Model e Repositório de reservas
+- Criação dos controladores de reserva
+- Ajuste de rotas de reserva
+- Ajuste de Model Imovel
+- Ajuste de Conexão com o Mongo
 
-# airbnbcloneback
+url: https://airbnbcone-beta-back.herokuapp.com/
+
+# airbnbcloneback - versão alfa
 Repositório Backend do desafio Airbnb Clone StartDB.
 
 url: https://ws-airbnbclone-1226.herokuapp.com
